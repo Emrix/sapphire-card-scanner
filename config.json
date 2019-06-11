@@ -1,0 +1,8 @@
+{
+	"stationName": "Brig Scanner",
+	"useBonjour": false,
+	"serverAddress": "127.0.0.1",
+	"serverPort": 1337,
+	"vid":65535,
+	"pid":53
+}
