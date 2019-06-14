@@ -3,7 +3,7 @@ const getThoriumAddress = require("./helpers/bonjour");
 const getClient = require("./helpers/graphqlClient");
 const registerClient = require("./helpers/registerClient");
 const startApp = require("./app");
-var HID = require('node-hid');
+// var HID = require('node-hid');
 
 const { stationName } = require("./config.json");
 const { useBonjour } = require("./config.json");
@@ -14,7 +14,7 @@ const { pid } = require("./config.json");
 
 var graphQLClient;
 
-console.log("Available Devices:\n", HID.devices());
+//console.log("Available Devices:\n", HID.devices());
 
 //clientName
 module.exports.clientId = stationName;
@@ -54,15 +54,16 @@ connectToServer();
 
 
 
-var device = new HID.HID(vid, pid);
+// var device = new HID.HID(vid, pid);
 process.on("SIGINT", closeDevice);
 
 function closeDevice() {
     console.log("Closed Device");
-    device.close();
+    //device.close();
 }
 
 var on_or_off = false;
+/*
 device.on("data", function(data) {
     if (startApp.simID == undefined || startApp.kbID == undefined) {
         return;
@@ -118,3 +119,4 @@ mutation TriggerKeyAction(
 
     }
 });
+*/

@@ -39,11 +39,11 @@ query Keyboard {
         for (let x = 0; x < data.keyboard.length; x++) {
             //console.log(data.keyboard[x].name);
             availableCards.push(data.keyboard[x].name);
-            cardData[data.keyboard[x].name]={};
-            cardData[data.keyboard[x].name]=data.keyboard[x].id
+            cardData[data.keyboard[x].name] = {};
+            cardData[data.keyboard[x].name] = data.keyboard[x].id
         }
-//        console.log(data);
-        client.query({
+//         //        console.log(data);
+        return client.query({
                 query: `
 mutation RegisterClient($client: ID!, $cards: [String]) {
   clientConnect(client: $client, mobile: true, cards: $cards)
@@ -54,4 +54,3 @@ mutation RegisterClient($client: ID!, $cards: [String]) {
             .then(() => client);
     });
 };
-
