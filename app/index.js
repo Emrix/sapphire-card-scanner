@@ -34,6 +34,7 @@ module.exports = async (address, port, clientId) => {
   const client = require("./client");
 
   App.on("clientChange", clientObj => {
+    console.log(clientObj);
     if (clientObj.simulator) {
       module.exports.simID = clientObj.simulator.id;
       module.exports.kbID = registerClient.cardData[clientObj.station.name];
